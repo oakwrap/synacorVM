@@ -17,12 +17,17 @@ Many thanks to @ericwastl and Synacor. https://challenge.synacor.com/
 
 
 The teleporter :
-teleporter.scm - run with (call-cf)
+----------------
+ teleporter.scm - run with (call-cf)
 
     Did not realize this was Ackermann's function until after giving up on an algebraic solution and reading other solutions. Implemented a pretty standard version and tried to add caching with a hash table. This could definitely be improved. Would also like to try Guile's threading to speed things up.
 
+ teleporter.c
+    Reimplemented the scheme teleporter script in c. Was surprised at how much faster it was. Two versions of the loop. One recursive and one with a stack that is very similar to the version in challenge.bin. Recursive loop takes around 55 seconds and the stack based version is around 95 seconds to process all values. Much better than 20 minutes!
+
 
 The orb :
-orb.scm - run with (dogrid)
+---------
+ orb.scm - run with (dogrid)
 
     Randomly walking between squares until it finds a solution. The count can be reduced (down to 12) until a solution is returned that works. Brute force but generally returns in a few seconds.
